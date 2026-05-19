@@ -1,0 +1,177 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #EFEAE4;
+    padding:
+  clamp(55px, 6vw, 83px)
+  clamp(24px, 4vw, 50px)
+  clamp(21px, 3vw, 37px)
+  clamp(24px, 4vw, 50px);
+}
+.MainContainer{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 78px;
+    width: 100%;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px 30px;
+}
+.topLeft{
+    display: flex;
+    justify-content: left;
+    
+}
+.topLeft img{
+    object-fit: cover;
+    max-width: 224px;
+
+}
+.topRight{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    gap: 80px;
+}
+.One , .Two{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 12px;
+}
+.One h4, .Two h4{
+    font-size: 18px;
+    color: #414141;
+    font-weight: 700;
+    font-family: var(--font-poppins);
+    margin: 0;
+}
+.One p{
+     font-size: 18px;
+    color: #414141;
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    margin: 0;
+    cursor: pointer;
+}
+.Two p{
+ font-size: 18px;
+    color: #414141;
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    margin: 0;
+    cursor: pointer;
+}
+.One a, .Two a,
+.One a:visited, .Two a:visited,
+.One a:active, .Two a:active,
+.One a:hover, .Two a:hover {
+    font-size: 18px;
+    color: #414141 !important;
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none !important;
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+}
+.One a::after, .Two a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #414141;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+.One a:hover::after, .Two a:hover::after {
+    transform: scaleX(1);
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #41414180;
+}
+.bottom p{
+    font-size: 14px;
+    color: #41414180;
+    font-weight: 300;
+    font-family: var(--font-poppins);
+    margin: 0;
+
+}
+.bottom h4{
+       font-size: 14px;
+    color: #41414180;
+    font-weight: 300;
+    font-family: var(--font-poppins);
+    margin: 0;
+    cursor: pointer;
+}
+.integraLink {
+    color: #414141;
+    text-decoration: none;
+    position: relative;
+}
+.integraLink::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #414141;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+.integraLink:hover::after {
+    transform: scaleX(1);
+}
+@media (max-width:900px){
+    .main{
+        padding: 55px 24px 37px 24px;
+    }
+    .MainContainer{
+        gap: 52px;
+    }
+    .top{
+        display: flex;
+        justify-content: left;
+        gap: 75px;
+        align-items: baseline;
+        padding: 0 !important;
+        flex-direction: column-reverse;
+    }
+    .topRight{
+        flex-direction: column;
+        gap: 40px;
+        justify-content: left;
+    }
+    .topLeft img{
+        max-width: 182px;
+        object-fit: contain;
+    }
+    .bottom h4{
+       display: none;
+        
+    }
+  
+}

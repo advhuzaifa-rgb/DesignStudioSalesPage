@@ -1,0 +1,97 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffff;
+   padding:
+  clamp(51px, 10vw, 150px)
+  clamp(24px, 12vw, 200px)
+  clamp(80px, 8vw, 150px)
+  clamp(24px, 12vw, 200px);
+}
+.MainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: clamp(40px, 6vw, 80px);
+    width: 100%s;
+}
+.Top{
+    display: flex;
+    justify-content: left;
+    
+}
+.Top p{
+ font-family: var(--font-pp-hatton);
+ font-size: var(--fs-32);
+ color:#414141 ;
+ margin: 0;
+ font-weight: 400;
+ line-height: 130%;
+ max-width: 1500px;
+ text-align: center;
+}
+.Bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+gap: clamp(25px, 10vw, 150px);
+}
+.One{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+.One h3{
+     font-family: var(--font-pp-hatton);
+ font-size: var(--fs-46);
+ color:#414141;
+ margin: 0;
+ font-weight: 400;
+}
+.One p{
+     font-family: var(--font-popins);
+ font-size: var(--fs-25);
+ color:#414141;
+ margin: 0;
+ font-weight: 400;
+ text-transform: uppercase;
+}
+@media(max-width: 640px){
+    .main{
+        padding: 51px 24px 80px 24px;
+        justify-content: left;
+    }
+    .MainContainer{
+        flex-direction: column;
+        justify-content: left;
+        align-items: baseline;
+        gap: 40px;
+    }
+    .Top p{
+        font-size: 20px;
+        text-align: left;
+        /* max-width: 330px; */
+
+    }
+    .Bottom{
+        justify-content: left;
+        align-items: baseline;
+        gap: 28px;
+    }
+    .One{
+        gap: 1px;
+    }
+    .One h3{
+        font-size: 24px;
+    }
+    .One p{
+        font-size: 14px;
+    }
+}

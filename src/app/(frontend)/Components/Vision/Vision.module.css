@@ -1,0 +1,287 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+padding:
+0px
+clamp(24px, calc(24px + (26 * ((100vw - 320px) / 1120))), 50px)
+clamp(80px, calc(80px + (80 * ((100vw - 320px) / 1120))), 160px)
+clamp(24px, calc(24px + (26 * ((100vw - 320px) / 1120))), 50px);
+}
+.MainContainer{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+.heading{
+    display: flex;
+    justify-content: left;
+}
+.heading h3{
+    font-size: var(--fs-25);
+    font-weight: 600;
+    color: #414141;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: var(--font-poppins);
+}
+
+.Cards{
+    display: flex;
+    justify-content: left;
+    gap: 33px;
+   flex-direction: row;
+   width: 100%;
+}
+.Cardone{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 54px;
+    width: 100%;
+    padding: 30px 30px 57px 24px;
+    background-color: #EFEAE4;
+}
+.CardOneTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:  100%;
+    flex-direction: row;
+}
+.CardOneTop h3{
+    font-size: var(--fs-25);
+    font-weight: 400;
+    color: #69594F;
+    margin:0;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+
+.CardOneTop h4{
+    font-size: var(--fs-32);
+    font-weight: 500;
+    color: #69594F;
+      margin:0;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+
+.CardOneBottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CardOneBottom img{
+    width: 100%;
+    height: 100%;
+    max-width: 257px;
+    max-height: 247px;
+    object-fit: cover;
+}
+.CardTwo{
+     display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 71px;
+    width: 100%;
+    padding: 30px 30px 74px 33px;
+    background-color: #B2AAA2;
+}
+.CardTwoTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:  100%;
+    flex-direction: row;
+}
+.CardTwoTop h3{
+    font-size: var(--fs-25);
+    font-weight: 400;
+      margin:0;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+
+.CardTwoTop h4{
+    font-size: var(--fs-32);
+    font-weight: 500;
+      margin:0;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+
+.CardTwoBottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CardTwoBottom img{
+    width: 100%;
+    height: 100%;
+    max-width: 212px;
+    max-height: 262px;
+    object-fit: cover;
+}
+.CardThree{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        gap: 57px;
+        width: 100%;
+        padding: 30px 30px 74px 26px;
+        background-color: #EFEAE4;
+}
+.CardThreeTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:  100%;
+    flex-direction: row;
+}
+.CardThreeTop h3{
+    font-size: var(--fs-25);
+    font-weight: 400;
+    color: #69594F;
+      margin:0;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+
+.CardThreeTop h4{
+    font-size: var(--fs-32);
+    font-weight: 500;
+    color: #69594F;
+      margin:0;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+[dir="rtl"] .CardThreeTop h4 {
+  font-family: var(--font-alexandria);
+}
+.CardThreeBottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CardThreeBottom img{
+    width: 100%;
+    height: 100%;
+    max-width: 226px;
+    max-height: 227px;
+    object-fit: cover;
+}
+.CardFour{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 59px;
+    width: 100%;
+    padding: 30px 30px 71px 20px;
+    background-color: #B2AAA2;
+}
+.CardFourTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:  100%;
+    flex-direction: row;
+}
+.CardFourTop h3{
+    font-size: var(--fs-25);
+    font-weight: 400;
+    color: #FFFFFF;
+      margin:0;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+[dir="rtl"] .CardFourTop h3 {
+  font-family: var(--font-alexandria);
+}
+.CardFourTop h4{
+    font-size: var(--fs-32);
+    font-weight: 500;
+      margin:0;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    font-family: var(--font-pp-hatton);
+}
+[dir="rtl"] .CardFourTop h4 {
+  font-family: var(--font-alexandria);
+}
+.CardFourBottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CardFourBottom img{
+    width: 100%;
+    height: 100%;
+    max-width: 220px;
+    max-height: 221px;
+    object-fit: cover;
+}
+@media (max-width: 640px){
+    .main{
+        padding: 0px 24px 80px 24px;
+    }
+    .MainContainer{
+        gap: 25px;
+    }
+   .Cards{
+        display: flex;
+       justify-content: left;
+       flex-direction: column;
+       gap: 40px;
+    }
+
+    .Cardone,
+    .CardTwo,
+    .CardThree,
+    .CardFour{
+        padding: 26px 28px 36px 26px;
+        gap: 16px;
+    }
+
+    .CardOneTop h3,
+    .CardTwoTop h3,
+    .CardThreeTop h3,
+    .CardFourTop h3{
+        font-size: 20px;
+    }
+
+    .CardOneTop h4,
+    .CardTwoTop h4,
+    .CardThreeTop h4,
+    .CardFourTop h4{
+        font-size: 20px;
+    }
+    .CardOneBottom img, .CardTwoBottom img, .CardThreeBottom img, .CardFourBottom img{
+        width: 100%;
+        height: 100%;
+        max-width: 192px;
+        max-height: 185px;
+    }
+    .heading h3{
+        font-size: 20px;
+    }
+
+}
+@media (min-width: 641px) and (max-width: 1140px){
+     .Cards{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 16px;
+    }
+
+}
+[dir='rtl'] .heading{
+  justify-content: right;
+}

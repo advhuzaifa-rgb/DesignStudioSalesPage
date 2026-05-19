@@ -1,0 +1,284 @@
+/* ─────────────────────────────────────────────────────
+   Matches Residence exactly — same fonts, sizes, colors
+───────────────────────────────────────────────────── */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffff;
+    padding:
+      0
+      clamp(24px, 4vw, 50px)
+      clamp(80px, 8vw, 125px)
+      clamp(24px, 4vw, 50px);
+}
+
+.MainContainer {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: clamp(40px, 7vw, 100px);
+    width: 100%;
+}
+
+/* ── Cards section ── */
+.top {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 44px;
+    width: 100%;
+}
+
+.toptop {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.toptopleft {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toptopleft h3 {
+    font-size: var(--fs-25);
+    font-weight: 600;
+    color: #414141;
+    margin: 0;
+    font-family: var(--font-poppins);
+}
+
+.toptopleft p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #414141;
+    margin: 0;
+    font-family: var(--font-poppins);
+    max-width: 911px;
+}
+
+.toptopright {
+    display: none;
+}
+
+.topbottom {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 27px;
+    width: 100%;
+}
+
+.card {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 0;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    max-height: 608px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #69594F;
+    margin: 0;
+    font-family: var(--font-poppins);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ── Logo strip ── */
+.logoSection {
+    width: 100%;
+    border-top: 1px solid #A7A7A780;
+    border-bottom: 1px solid #A7A7A780;
+    padding: 25px 0;
+}
+
+.logoStrip {
+    overflow: hidden;
+    width: 100%;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 130px;
+    width: max-content;
+    animation: scrollLogos 30s linear infinite;
+}
+
+.logoImg {
+    height: clamp(22px, 2.5vw, 35px);
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+@keyframes scrollLogos {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── CTA ── */
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ctaee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    background-color: #69594F;
+    padding: 7px 24px;
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: var(--font-poppins);
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+    .main {
+        padding: 0px 0px 80px 24px;
+        overflow: hidden;
+    }
+
+    .MainContainer {
+        gap: 40px;
+    }
+
+    .top {
+        gap: 30px;
+    }
+
+    .toptopleft {
+        gap: 8px;
+    }
+
+    .toptop {
+        padding-right: 24px;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    .toptopleft h3 {
+        font-size: 20px;
+    }
+
+    .toptopleft p {
+        font-size: 14px;
+        max-width: 280px;
+    }
+
+    .toptopright {
+        display: flex;
+        justify-content: right;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .toptopright svg {
+        cursor: pointer;
+        transition: 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .topbottom {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-right: 24px;
+        scroll-snap-type: x mandatory;
+        touch-action: pan-x;
+        cursor: grab;
+        user-select: none;
+        overscroll-behavior-x: contain;
+    }
+
+    .topbottom::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card {
+        flex: 0 0 82%;
+        min-width: 82%;
+        gap: 15px;
+        scroll-snap-align: start;
+        transition: transform 0.3s ease;
+    }
+
+    .topbottom:active {
+        cursor: grabbing;
+    }
+
+    .card img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .logoSection {
+        padding-right: 0;
+    }
+
+    .track {
+        gap: 80px;
+        animation: scrollLogosMobile 20s linear infinite;
+    }
+
+    .logoImg {
+        height: 22px;
+    }
+
+    @keyframes scrollLogosMobile {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .bottom {
+        justify-content: center;
+        padding-right: 24px;
+    }
+
+    .ctaee {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1000px) {
+    .card h3 {
+        font-size: 16px;
+        min-height: 48px;
+    }
+}

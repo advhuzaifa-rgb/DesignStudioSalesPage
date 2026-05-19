@@ -1,0 +1,157 @@
+.glideContainer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    width: max-content;
+}
+
+
+.arrowBehind {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-60px);
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.glideContainer:hover .arrowBehind {
+    animation: arrowBehindIn 0.7s ease-in-out forwards;
+}
+
+.glideContainer:not(:hover) .arrowBehind {
+    animation: arrowBehindOut 0.7s ease-in-out forwards;
+}
+
+@keyframes arrowBehindIn {
+    0%   { opacity: 0; transform: translateY(-50%) translateX(-60px); }
+    100% { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+
+@keyframes arrowBehindOut {
+    0%   { opacity: 1; transform: translateY(-50%) translateX(0); }
+    100% { opacity: 0; transform: translateY(-50%) translateX(-60px); }
+}
+
+
+.text {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    z-index: 5;
+}
+
+.glideContainer:hover .text {
+    animation: textIn 0.7s ease-in-out forwards;
+}
+
+.glideContainer:not(:hover) .text {
+    animation: textOut 0.7s ease-in-out forwards;
+}
+
+@keyframes textIn {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(30px); }
+}
+
+@keyframes textOut {
+    0%   { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+}
+
+
+.arrowFront {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.glideContainer:hover .arrowFront {
+    animation: arrowFrontIn 0.7s ease-in-out forwards;
+}
+
+.glideContainer:not(:hover) .arrowFront {
+    animation: arrowFrontOut 0.7s ease-in-out forwards;
+}
+
+@keyframes arrowFrontIn {
+    0%   { transform: translateX(0);    opacity: 1; }
+    100% { transform: translateX(42px); opacity: 0; }
+}
+
+@keyframes arrowFrontOut {
+    0%   { transform: translateX(42px); opacity: 0; }
+    100% { transform: translateX(0);    opacity: 1; }
+}
+
+
+@media (max-width: 640px) {
+    .glideContainer { gap: 6px; }
+
+    .arrowBehind {
+        width: 10px;
+        height: 10px;
+        transform: translateY(-50%) translateX(-48px);
+    }
+
+    .arrowFront {
+        width: 10px;
+        height: 10px;
+    }
+
+    .glideContainer:hover .arrowBehind {
+        animation: arrowBehindInMobile 0.7s ease-in-out forwards;
+    }
+    .glideContainer:not(:hover) .arrowBehind {
+        animation: arrowBehindOutMobile 0.7s ease-in-out forwards;
+    }
+
+    @keyframes arrowBehindInMobile {
+        0%   { opacity: 0; transform: translateY(-50%) translateX(-48px); }
+        100% { opacity: 1; transform: translateY(-50%) translateX(0); }
+    }
+    @keyframes arrowBehindOutMobile {
+        0%   { opacity: 1; transform: translateY(-50%) translateX(0); }
+        100% { opacity: 0; transform: translateY(-50%) translateX(-48px); }
+    }
+
+    .glideContainer:hover .text {
+        animation: textInMobile 0.7s ease-in-out forwards;
+    }
+    .glideContainer:not(:hover) .text {
+        animation: textOutMobile 0.7s ease-in-out forwards;
+    }
+
+    @keyframes textInMobile {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(33px); }
+    }
+    @keyframes textOutMobile {
+        0%   { transform: translateX(33px); }
+        100% { transform: translateX(0); }
+    }
+
+    .glideContainer:hover .arrowFront {
+        animation: arrowFrontInMobile 0.7s ease-in-out forwards;
+    }
+    .glideContainer:not(:hover) .arrowFront {
+        animation: arrowFrontOutMobile 0.7s ease-in-out forwards;
+    }
+
+    @keyframes arrowFrontInMobile {
+        0%   { transform: translateX(0);    opacity: 1; }
+        100% { transform: translateX(33px); opacity: 0; }
+    }
+    @keyframes arrowFrontOutMobile {
+        0%   { transform: translateX(33px); opacity: 0; }
+        100% { transform: translateX(0);    opacity: 1; }
+    }
+}
