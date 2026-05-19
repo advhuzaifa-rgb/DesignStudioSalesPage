@@ -17,13 +17,15 @@
     width: 100%;
     align-items: center;
     flex-direction: row;
+    overflow: hidden;
 }
 .Left{
     display: flex;
     justify-content: left;
     flex-direction: column;
     gap: 30px;
-    width: 40%;
+    flex: 0 0 40%;
+    min-width: 0;
 }
 .LeftTop{
     display: flex;
@@ -66,12 +68,16 @@
 }
 .Right{
     display: flex;
-    justify-content: right;
-    width: 60%;
+    justify-content: flex-end;
+    flex: 0 0 60%;
+    min-width: 0;
+    overflow: hidden;
 }
 .Right img{
+    width: 100%;
+    height: auto;
+    display: block;
     object-fit: cover;
-    max-width: 1050px;
 }
 @media(max-width:640px){
     .Main{
@@ -106,7 +112,7 @@
     }
 
 }
-@media(min-width:641px) and (max-width:1040px){
+@media(min-width:641px) and (max-width:1100px){
     .Main{
         padding-right: 50px;
     }
@@ -117,9 +123,11 @@
         gap: 40px;
     }
     .Right{
+        flex: 0 0 100%;
         width: 100%;
     }
     .Left{
+        flex: 0 0 100%;
         width: 100%;
     }
 }
