@@ -157,9 +157,24 @@ const Hospitality = () => {
 
           <div className={styles.logoSection}>
             <div className={styles.logoStrip}>
-              <div className={styles.track} aria-hidden="true">
-                {[...logos, ...logos].map((logo, i) => (
+              <div className={styles.track}>
+                {logos.map((logo, i) => (
                   <Image key={i} src={logo} alt="" className={styles.logoImg} />
+                ))}
+              </div>
+              <div className={styles.track} aria-hidden="true">
+                {logos.map((logo, i) => (
+                  <Image key={`b${i}`} src={logo} alt="" className={styles.logoImg} />
+                ))}
+              </div>
+              <div className={styles.track} aria-hidden="true">
+                {logos.map((logo, i) => (
+                  <Image key={`c${i}`} src={logo} alt="" className={styles.logoImg} />
+                ))}
+              </div>
+              <div className={styles.track} aria-hidden="true">
+                {logos.map((logo, i) => (
+                  <Image key={`d${i}`} src={logo} alt="" className={styles.logoImg} />
                 ))}
               </div>
             </div>

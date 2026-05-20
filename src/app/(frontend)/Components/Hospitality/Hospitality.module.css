@@ -109,13 +109,15 @@
 .logoStrip {
     overflow: hidden;
     width: 100%;
+    display: flex;
 }
 
 .track {
     display: flex;
     align-items: center;
     gap: 130px;
-    width: max-content;
+    padding-right: 130px;
+    flex-shrink: 0;
     animation: scrollLogos 30s linear infinite;
 }
 
@@ -128,7 +130,7 @@
 
 @keyframes scrollLogos {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-100%); }
 }
 
 
@@ -251,6 +253,7 @@
 
     .track {
         gap: 80px;
+        padding-right: 80px;
         animation: scrollLogosMobile 20s linear infinite;
     }
 
@@ -260,7 +263,7 @@
 
     @keyframes scrollLogosMobile {
         0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        100% { transform: translateX(-100%); }
     }
 
     .bottom {
