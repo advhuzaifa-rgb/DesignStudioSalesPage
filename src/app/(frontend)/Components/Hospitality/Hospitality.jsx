@@ -137,7 +137,7 @@ const Hospitality = () => {
                 </div>
                 <div className={styles.card}>
                   <Image src={five} alt="Sushi Samba" />
-                  <h3>Mott 32</h3>
+                  <h3>MoTT 32</h3>
                 </div>
               </div>
             </div>
