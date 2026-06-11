@@ -1,7 +1,29 @@
 import type { Metadata } from 'next'
 import React from 'react'
+import { Poppins } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
+
+const ppHatton = localFont({
+  src: '../../../public/fonts/PPHatton-Regular.ttf',
+  variable: '--font-pp-hatton',
+  weight: '400',
+  display: 'swap',
+})
+
+const modernline = localFont({
+  src: '../../../public/fonts/modernline-personal-use.bold.otf',
+  variable: '--font-modernline',
+  weight: '700',
+  display: 'swap',
+})
 export const metadata: Metadata = {
   title: 'Al Huzaifa Design Studio | Luxury Interior Design Dubai',
   description:
@@ -62,7 +84,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${ppHatton.variable} ${modernline.variable}`}>
       <body>
         <main>{children}</main>
       </body>

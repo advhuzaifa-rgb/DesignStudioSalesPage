@@ -33,7 +33,7 @@ const Footer = () => {
 
             </div>
             <div className={styles.bottom}>
-                <p>Copyright © 2025 Al-Huzaifa</p>
+                <p>Copyright © 2026 Al-Huzaifa</p>
                 <h4>Crafted by <a href="http://integramagna.com/?utm_source=alhuzaifa-sales-page" target="_blank" rel="noopener noreferrer" className={styles.integraLink}>Integra Magna</a></h4>
 
             </div>

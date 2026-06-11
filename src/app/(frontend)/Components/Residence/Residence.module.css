@@ -55,6 +55,10 @@
 .toptopright{
     display: none;
 }
+.viewport{
+    overflow: hidden;
+    width: 100%;
+}
 .topbottom{
     display: flex;
     justify-content: left;
@@ -63,7 +67,7 @@
     width: 100%;
 }
 .card{
-  flex: 1 1 0;
+  flex: 0 0 calc((100% - 54px) / 3);
     display: flex;
     flex-direction: column;
     gap: 15px;

@@ -1,23 +1,33 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 import styles from './Residence.module.css'
 import one from './1.webp'
 import two from './2.webp'
 import three from './3.webp'
+import four from './5.webp'
+import five from './6.webp'
 import Image from 'next/image'
 import GlideArrow from '../Common/GlideArrow/GlideArrow'
 import FormPopUp from '../FormPopUp/FormPopUp'
 
 const Residence = () => {
-  const sliderRef      = useRef(null)
-  const leftArrowRef   = useRef(null)
-  const rightArrowRef  = useRef(null)
-  const isDragging     = useRef(false)
-  const dragStartX     = useRef(0)
-  const dragScrollLeft = useRef(0)
+  // Embla runs on desktop; switches OFF at <=640px so mobile keeps native scroll
+  const [emblaRef] = useEmblaCarousel({
+    align: 'start',
+    containScroll: 'trimSnaps',
+    breakpoints: {
+      '(max-width: 640px)': { active: false },
+    },
+  })
+
+  const sliderRef     = useRef(null)
+  const leftArrowRef  = useRef(null)
+  const rightArrowRef = useRef(null)
 
   const [popupOpen, setPopupOpen] = useState(false)
 
+  // Mobile arrows -> native scroll (Embla is inactive on mobile)
   const scrollByCard = (direction) => {
     const slider = sliderRef.current
     if (!slider) return
@@ -36,58 +46,25 @@ const Residence = () => {
   }
 
   useEffect(() => {
-    const slider     = sliderRef.current
-    const leftArrow  = leftArrowRef.current
-    const rightArrow = rightArrowRef.current
+    const slider = sliderRef.current
     if (!slider) return
 
     const updateArrows = () => {
       const atStart = slider.scrollLeft <= 5
       const atEnd   = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5
-      if (leftArrow) {
-        leftArrow.style.opacity       = atStart ? '0.4' : '1'
-        leftArrow.style.pointerEvents = atStart ? 'none' : 'auto'
+      if (leftArrowRef.current) {
+        leftArrowRef.current.style.opacity       = atStart ? '0.4' : '1'
+        leftArrowRef.current.style.pointerEvents = atStart ? 'none' : 'auto'
       }
-      if (rightArrow) {
-        rightArrow.style.opacity       = atEnd ? '0.4' : '1'
-        rightArrow.style.pointerEvents = atEnd ? 'none' : 'auto'
+      if (rightArrowRef.current) {
+        rightArrowRef.current.style.opacity       = atEnd ? '0.4' : '1'
+        rightArrowRef.current.style.pointerEvents = atEnd ? 'none' : 'auto'
       }
-    }
-
-    const onMouseDown = (e) => {
-      isDragging.current     = true
-      dragStartX.current     = e.pageX - slider.offsetLeft
-      dragScrollLeft.current = slider.scrollLeft
-      slider.style.cursor    = 'grabbing'
-    }
-
-    const onMouseMove = (e) => {
-      if (!isDragging.current) return
-      e.preventDefault()
-      const x    = e.pageX - slider.offsetLeft
-      const walk = x - dragStartX.current
-      slider.scrollLeft = dragScrollLeft.current - walk
-    }
-
-    const stopDrag = () => {
-      isDragging.current  = false
-      slider.style.cursor = 'grab'
     }
 
     updateArrows()
-    slider.addEventListener('scroll',     updateArrows)
-    slider.addEventListener('mousedown',  onMouseDown)
-    slider.addEventListener('mousemove',  onMouseMove)
-    slider.addEventListener('mouseup',    stopDrag)
-    slider.addEventListener('mouseleave', stopDrag)
-
-    return () => {
-      slider.removeEventListener('scroll',     updateArrows)
-      slider.removeEventListener('mousedown',  onMouseDown)
-      slider.removeEventListener('mousemove',  onMouseMove)
-      slider.removeEventListener('mouseup',    stopDrag)
-      slider.removeEventListener('mouseleave', stopDrag)
-    }
+    slider.addEventListener('scroll', updateArrows)
+    return () => slider.removeEventListener('scroll', updateArrows)
   }, [])
 
   return (
@@ -131,18 +108,29 @@ const Residence = () => {
                 </svg>
               </div>
             </div>
-            <div className={styles.topbottom} ref={sliderRef}>
-              <div className={styles.card}>
-                <Image src={one} alt="image" />
-                <h3>Nad al sheba villa</h3>
-              </div>
-              <div className={styles.card}>
-                <Image src={two} alt="image" />
-                <h3>Downtown grande signature</h3>
-              </div>
-              <div className={styles.card}>
-                <Image src={three} alt="image" />
-                <h3>Downtown apartment</h3>
+
+            <div className={styles.viewport} ref={emblaRef}>
+              <div className={styles.topbottom} ref={sliderRef}>
+                <div className={styles.card}>
+                  <Image src={one} alt="image" />
+                  <h3>Nad al sheba villa</h3>
+                </div>
+                <div className={styles.card}>
+                  <Image src={two} alt="image" />
+                  <h3>Downtown grande signature</h3>
+                </div>
+                <div className={styles.card}>
+                  <Image src={three} alt="image" />
+                  <h3>Downtown apartment</h3>
+                </div>
+                <div className={styles.card}>
+                  <Image src={four} alt="image" />
+                  <h3>Burj View Residence</h3>
+                </div>
+                <div className={styles.card}>
+                  <Image src={five} alt="image" />
+                  <h3>Al Marsa Residence</h3>
+                </div>
               </div>
             </div>
           </div>
