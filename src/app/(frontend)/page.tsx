@@ -31,7 +31,7 @@ export default async function HomePage() {
     <Hospitality />
     <Residence />
     <OurEdge />
-    <Vision />
+    {/* <Vision /> */}
     <Begin />
     <Footer />
     </>

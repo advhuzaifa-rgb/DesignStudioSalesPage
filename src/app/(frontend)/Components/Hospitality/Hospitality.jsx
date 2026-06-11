@@ -21,7 +21,7 @@ import logo6 from './logos/6.png'
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6]
 
 const Hospitality = () => {
-  // Embla runs on desktop; it switches OFF at <=640px so mobile keeps native scroll
+
   const [emblaRef] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -36,7 +36,7 @@ const Hospitality = () => {
 
   const [popupOpen, setPopupOpen] = useState(false)
 
-  // Mobile arrows -> native scroll (Embla is inactive on mobile)
+
   const scrollByCard = (direction) => {
     const slider = sliderRef.current
     if (!slider) return

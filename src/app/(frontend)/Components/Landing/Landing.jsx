@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from './Landing.module.css'
 import logo from './logo.png'
+import hero from './1.webp'
 import ContactForm from '../ContactForm/ContactForm'
 import FormPopUp from '../FormPopUp/FormPopUp'
 
@@ -12,6 +13,14 @@ export default function Landing() {
   return (
     <>
       <div className={styles.main}>
+         <Image
+          src={hero}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.bg}
+        />
         <div className={styles.container}>
 
           <div className={styles.left}>

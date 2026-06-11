@@ -12,7 +12,6 @@ import GlideArrow from '../Common/GlideArrow/GlideArrow'
 import FormPopUp from '../FormPopUp/FormPopUp'
 
 const Residence = () => {
-  // Embla runs on desktop; switches OFF at <=640px so mobile keeps native scroll
   const [emblaRef] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -27,7 +26,7 @@ const Residence = () => {
 
   const [popupOpen, setPopupOpen] = useState(false)
 
-  // Mobile arrows -> native scroll (Embla is inactive on mobile)
+
   const scrollByCard = (direction) => {
     const slider = sliderRef.current
     if (!slider) return
