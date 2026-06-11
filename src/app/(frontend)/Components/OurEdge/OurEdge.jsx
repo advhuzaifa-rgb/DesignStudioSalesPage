@@ -14,7 +14,7 @@ const OurEdge = () => {
               <Image src={oneimg} alt="img" />
             </div>
             <div className={styles.bottom}>
-              <h3>Our edge</h3>
+              <h3>Our Edge</h3>
               <div className={styles.desc}>
                 <h4>Craftsmanship, Precision, Reliability</h4>
                 <p>

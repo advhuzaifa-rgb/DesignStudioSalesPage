@@ -74,11 +74,11 @@ const Residence = () => {
             <div className={styles.toptop}>
               <div className={styles.toptopleft}>
                 <h3>Residence Redefined</h3>
-                <p>
+                {/* <p>
                   Our residences are sanctuaries of elegance, bespoke villas, apartments, and
                   interiors shaped by individuality, enriched with curated finishes, and perfected
                   through turnkey execution.
-                </p>
+                </p> */}
               </div>
               <div className={styles.toptopright}>
                 <svg

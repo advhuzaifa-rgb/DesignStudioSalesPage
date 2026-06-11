@@ -85,11 +85,11 @@ const Hospitality = () => {
             <div className={styles.toptop}>
               <div className={styles.toptopleft}>
                 <h3>Immersive Hospitality Spaces</h3>
-                <p>
+                {/* <p>
                   We partner with world-renowned F&B brands and hotels to craft immersive
                   destinations. Each space is a balance of design refinement and operational
                   precision, delivered flawlessly from concept to completion.
-                </p>
+                </p> */}
               </div>
               <div className={styles.toptopright}>
                 <svg

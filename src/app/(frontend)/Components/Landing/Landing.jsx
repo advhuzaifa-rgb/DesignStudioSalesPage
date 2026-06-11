@@ -33,9 +33,9 @@ export default function Landing() {
               <h1 className={styles.heading}>
             Crafting Your Signature Style Beyond Bespoke 
               </h1>
-              <p className={styles.desc}>
+              {/* <p className={styles.desc}>
           Interiors for residences and landmark commercial spaces, where precision, elegance, and enduring value.
-              </p>
+              </p> */}
               <button
                 className={styles.mobileCta}
                 onClick={() => setPopupOpen(true)}
